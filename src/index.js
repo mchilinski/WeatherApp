@@ -1,15 +1,17 @@
-import React from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import SearchBar from './components/search_bar';
+import AllDays from './components/all_days';
 
-import App from './components/app';
-import reducers from './reducers';
+class App extends Component {
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
-
-ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <App />
-  </Provider>
-  , document.querySelector('.container'));
+  render() {
+    return(
+      <div>
+       <SearchBar/>
+       <AllDays />
+      </div>
+    );
+  }
+}
+ReactDOM.render(<App />, document.querySelector('.container'));
