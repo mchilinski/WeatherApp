@@ -1,11 +1,45 @@
 import React, { Component } from 'react';
-
+import CityNameAdd from './city_name_add'
 
 class DayBox extends Component {
-  render() {
-    return (
+  constructor(props){
+      super(props);
+      this.state = {
+        isHidden: true,
+      }
+    }
+
+remove = (i) => {
+  this.setState({ isHidden: false })
+}
+// currectDay = (query) => {
+//   axios.get(`http://www.api.openweathermap.org/data/2.5/weather?q=${query}`)
+//     .then((data) => {
+//       const { drinks } = data.data;
+//       this.setState({ drinks }, () => {
+//         this.getCurrentDrink(drinks[0].idDrink);
+//       });
+//     });
+// }
+//
+// currectDay = (id) => {
+//   axios.get(`http://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
+//     .then((data) => {
+//       const currentDrink = data.data.drinks[0];
+//       this.setState({ currentDrink });
+//     });
+// }
+
+render() {
+        if (!this.state.isHidden) {
+            return null;
+        }else{
+        return(
 <div className="dayBox">
-  <div className="dayName"></div>
+  <div className="dayName">
+    <CityNameAdd/>
+    <button className="deleteBox" onClick={this.remove}>X</button>
+  </div>
   <div className="dayInfo">
     <div clasNames="todayName"></div>
     <div className="todayDate"></div>
@@ -22,6 +56,7 @@ class DayBox extends Component {
   </div>
 </div>
 );
+}
 }
 }
 
