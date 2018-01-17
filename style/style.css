@@ -11,79 +11,27 @@ margin-right: auto;
 display: flex;
 justify-content: center;
 flex-direction: column;
+background-color: #00bcd4;
 }
 
 /* Header and Search */
-header{
+.logo{
 padding-top: 30px;
 font: 'Roboto Slab', bold;
 font-size: 24px;
 color: white;
-margin-left: auto; margin-right: auto;
+margin-left: auto;
+margin-right: auto;
 text-align: center;
-}
-.addCity{
-width: 500px;
-background-color: white;
-display: flex;
-align-items: center;
-text-align: left;
-}
-.inputCity{
-margin-left: 10px;
-width: 93%;
-text-decoration: none;
-border: none;
-font-size: 16px;
-color: #00bcd4;
-grid-area: inputCity;
-}
-.inputCity::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-color: #00bcd4;
-font-size: 16px;
-}
-.inputCity::-moz-placeholder { /* Firefox 19+ */
-color: #00bcd4;
-font-size: 16px;
-}
-.inputCity:-ms-input-placeholder { /* IE 10+ */
-color: #00bcd4;
-font-size: 16px;
-}
-.inputCity:-moz-placeholder { /* Firefox 18- */
-color: #00bcd4;
-font-size: 16px;
+margin-bottom: 25px;
 }
 
-button{
-  width: 70px;
-  height: 100%;
-  background-color: #00bcd4;
-  text-align: center;
-  font-size: 42px;
-  border: 2px solid white;
-  color: white;
-  grid-area: button;
-}
-@media (max-width: 900px){
-.addCity{
-display: grid;
-grid-template-columns: 1fr ;
-grid-template-rows: 50% 50%;
-grid-template-areas:
-"inputCity"
-"button";
-}
-button{
-  width: 100%;
-}
-}
 /* Daybox */
 .dayBox{
 width: 1000px;
 height: 400px;
 background-color: white;
-margin-top: 50px;
+margin-top: 25px;
 margin-left: auto; margin-right: auto;
 display: grid;
 grid-template-columns: 25% 1fr 1fr ;
@@ -93,35 +41,127 @@ grid-template-areas:
 "dayInfo dayGraph dayGraph"
 "dayInfo nextDays nextDays";
 }
-.dayName{
-  background-color: green;
-  grid-area: dayName;
-}
-.dayInfo{
-  background-color: blue;
+      .dayName{
+        /* background-color: red; */
+        grid-area: dayName;
+        border-bottom: 2px solid #00bcd4;
+        color: #00bcd4;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+      }
+      .CityNameAdd{
+        /* background-color: green; */
+        margin-bottom: 3px;
+        display: flex;
+        align-items: center;
+        width: 95%;
+      }
+              .search-bar{
+                padding-left: 5px;
+                height: 100%;
+                border: none;
+                font-size: 20px;
+              }
+              .search-bar::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+              color: #00bcd4;
+              font-size: 20px;;
+              }
+              .search-bar::-moz-placeholder { /* Firefox 19+ */
+              color: #00bcd4;
+              font-size: 20px;
+              }
+              .search-bar:-ms-input-placeholder { /* IE 10+ */
+              color: #00bcd4;
+              font-size: 20px;
+              }
+              .search-bar:-moz-placeholder { /* Firefox 18- */
+              color: #00bcd4;
+              font-size: 20px;
+              }
+        .correctCity{
+          height: 100%;
+          margin-right: 20px;
+          padding-left: 5px;
+          font-size: 20px;
+          margin-top: 25px;
+        }
+         .saveCity{
+          height: 100%;
+          background-color: white;
+          border: none;
+          padding-top: 3px;
+        }
+        .icon{
+          height: 100%;
+          width: 15px;
+        }
+        .deleteBox{
+          width: 5%;
+          height: 100%;
+          font-size: 24px;
+          background-color: white;
+          border: none;
+        }
+        .deleteBox:hover{
+          background-color: #f2f2f2;
+        }
+    .dayInfo{
+  /* background-color: blue; */
   grid-area: dayInfo;
   display: grid;
-  grid-template-rows: 10% 20% 40%
+  grid-template-rows: 10% 20% 40%;
+  border-right: 3px solid #00bcd4;
 }
-    .todayName{
+.todayTemperature{
+  text-align: center;
+  color: #00bcd4;
+  font-size: 42px;
+}
+.todayMoreInfo{
+  text-align: center;
+  color: #00bcd4;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+.todayName{
 
-    }
-    .
+}
 .dayGraph{
-  background-color: yellow;
+  /* background-color: yellow; */
   grid-area:  dayGraph;
 }
 .nextDays{
-  background-color: red;
+  /* background-color: red; */
   grid-area:  nextDays;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 .nextDays > div{
-  border: 5px solid blue;
+  border-top: 3px solid #00bcd4;
+  border-left: 3px solid #00bcd4;
 }
-
-
+.nextDays :first-child{
+  border-left: none;
+  font: 'Roboto Slab', 100;
+}
+.add_button{
+    width: 65px;
+    height: 65px;
+    background-color: white;
+    border: none;
+    border-radius: 100%;
+    margin-right: 10%;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    color: #00bcd4;
+    z-index: 5;
+    margin-bottom: 25px;
+}
 
 @media (max-width: 900px){
 #container{
@@ -139,8 +179,8 @@ grid-template-areas:
   "dayGraph"
   "nextDays";
 }
-.dayBox:active{
-  width: 100%;
-  height: 650px;
+.dayInfo{
+  border-right: none;
+  border-bottom: 3px solid #00bcd4;
 }
 }
